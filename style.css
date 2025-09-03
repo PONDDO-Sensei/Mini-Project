@@ -1,0 +1,153 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eff4aa, #e2e8f0);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
+  background: #fdfdfd;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-bar input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.add-bar button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-bar button:hover {
+  background: #1e40af;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.toolbar button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: #f87171;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.toolbar button:hover {
+  background: #dc2626;
+}
+
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #f9fafb;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#taskList li:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+#taskList li.done span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+#taskList li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+#taskList li button {
+  margin-left: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#taskList li button:hover {
+  background: #d1d5db;
+}
+
+#taskList .empty {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.toolbar {
+  flex-direction: column;
+  align-items: stretch;
+}

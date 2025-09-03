@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>To-Do List</h1>
+
+    <div class="add-bar">
+      <input id="newTask" type="text" placeholder="พิมพ์งานที่ต้องทำ..." />
+      <button onclick="addTask()">เพิ่ม</button>
+    </div>
+
+    <div class="toolbar">
+      <input id="searchBox" type="text" placeholder="ค้นหา..." oninput="renderTasks()" />
+      <select id="filter" onchange="renderTasks()">
+        <option value="all">ทั้งหมด</option>
+        <option value="active">ค้างทำ</option>
+        <option value="done">เสร็จแล้ว</option>
+      </select>
+      <button onclick="clearDone()">ลบที่เสร็จแล้ว</button>
+    </div>
+
+    <ul id="taskList"></ul>
+    <p class="note">* ข้อมูลถูกบันทึกไว้ในเบราเซอร์ (localStorage)</p>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
