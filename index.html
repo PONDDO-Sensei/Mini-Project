@@ -8,10 +8,14 @@
 </head>
 <body>
   <div class="app">
-    <h1>To-Do List</h1>
+    
+    <div class="top-right">
+      <button onclick="toggleTheme()">🌙/☀️</button>
+    </div>
 
+    <h1>To-Do List</h1>
     <div class="add-bar">
-      <input id="newTask" type="text" placeholder="พิมพ์งานที่ต้องทำ..." />
+      <input id="newTask" type="text" placeholder="เพิ่มงานที่ต้องทำ..." />
       <button onclick="addTask()">เพิ่ม</button>
     </div>
 
@@ -22,14 +26,19 @@
         <option value="active">ค้างทำ</option>
         <option value="done">เสร็จแล้ว</option>
       </select>
-      <button onclick="clearDone()">ลบที่เสร็จแล้ว</button>
+      <select id="sort" onchange="renderTasks()">
+        <option value="newest">ล่าสุด</option>
+        <option value="oldest">เก่าสุด</option>
+        <option value="activeFirst">งานค้างทำมาก่อน</option>
+      </select>
+      <button onclick="clearDone()">ลบที่งานที่สำเร็จแล้ว</button>
     </div>
 
     <ul id="taskList"></ul>
+    <p id="counter"></p>
     <p class="note">* ข้อมูลถูกบันทึกไว้ในเบราเซอร์ (localStorage)</p>
   </div>
 
-  
   <script src="script.js"></script>
 </body>
 </html>
