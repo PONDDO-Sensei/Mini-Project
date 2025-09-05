@@ -1,232 +1,199 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #eff4aa, #e2e8f0);
-  margin: 0;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eff4aa, #e2e8f0);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
 }
 
 .app {
-  position: relative; /* ใช้สำหรับวางปุ่ม top-right */
-  width: 100%;
-  max-width: 600px;
-  background: #fdfdfd;
-  border-radius: 1rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
-  transition: background 0.3s, color 0.3s;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    background: #fdfdfd;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: background 0.3s, color 0.3s;
 }
 
 .top-right {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
 .top-right button {
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: #6b7280;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.2s;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #6b7280;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
 .top-right button:hover {
-  background: #4b5563;
+    background: #4b5563;
 }
 
 h1 {
-  margin: 0 0 1rem;
-  font-size: 1.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
 }
 
 .add-bar {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .add-bar input {
-  flex: 1;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
 }
 
 .add-bar button {
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: #2563eb;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
 }
 
 .add-bar button:hover {
-  background: #1e40af;
+    background: #1e40af;
 }
 
-.toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  flex-direction: column;
-  align-items: stretch;
+.toolbar-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.toolbar input,
-.toolbar select {
-  padding: 0.4rem 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 0.4rem;
-  font-size: 0.9rem;
+.filters button,
+.sorts button,
+.clear-done {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
 }
 
-.toolbar button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 0.4rem;
-  background: #f87171;
-  color: #fff;
-  cursor: pointer;
-  font-size: 0.9rem;
+.filters button.active,
+.sorts button.active {
+    background: #2563eb;
+    color: #fff;
 }
 
-.toolbar button:hover {
-  background: #dc2626;
+.filters button:hover,
+.sorts button:hover,
+.clear-done:hover {
+    opacity: 0.8;
 }
 
 #taskList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 #taskList li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  background: #f9fafb;
-  margin-bottom: 0.5rem;
-  transition: background 0.2s, transform 0.1s;
-}
-
-#taskList li:hover {
-  background: #f1f5f9;
-  transform: translateY(-1px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: #f9fafb;
+    margin-bottom: 0.5rem;
 }
 
 #taskList li.done span {
-  text-decoration: line-through;
-  color: #9ca3af;
+    text-decoration: line-through;
+    color: #9ca3af;
 }
 
 #taskList li span {
-  flex: 1;
-  cursor: pointer;
+    flex: 1;
+    cursor: pointer;
+}
+
+#taskList li small {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #6b7280;
 }
 
 #taskList li button {
-  margin-left: 0.3rem;
-  padding: 0.3rem 0.6rem;
-  border: none;
-  border-radius: 0.3rem;
-  background: #e5e7eb;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#taskList li button:hover {
-  background: #d1d5db;
-}
-
-#taskList .empty {
-  text-align: center;
-  padding: 1rem;
-  color: #6b7280;
-  font-size: 0.9rem;
-  background: #f3f4f6;
-  border-radius: 0.5rem;
-}
-
-.note {
-  font-size: 0.8rem;
-  color: #9ca3af;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-#taskList li.editing span {
-  display: none;
-}
-
-#taskList li.editing input {
-  flex: 1;
-  padding: 0.4rem 0.6rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.4rem;
+    margin-left: 0.3rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 0.3rem;
+    background: #e5e7eb;
+    cursor: pointer;
 }
 
 #taskList li button.edit {
-  background: #facc15; 
+    background: #facc15;
 }
 
 #taskList li button.edit:hover {
-  background: #eab308;
+    background: #eab308;
+}
+
+#taskList li button:hover {
+    background: #d1d5db;
+}
+
+#taskList .empty {
+    text-align: center;
+    padding: 1rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 body.dark {
-  background: linear-gradient(135deg, #1f2937, #111827);
-  color: #e5e7eb;
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #e5e7eb;
 }
 
 body.dark .app {
-  background: #1f2937;
-  color: #f9fafb;
+    background: #1f2937;
+    color: #f9fafb;
 }
 
 body.dark #taskList li {
-  background: #374151;
-  border-color: #4b5563;
+    background: #374151;
+    border-color: #4b5563;
 }
 
 body.dark #taskList li.done span {
-  color: #9ca3af;
+    color: #9ca3af;
 }
 
 body.dark #taskList li:hover {
-  background: #4b5563;
+    background: #4b5563;
 }
 
-body.dark .toolbar button {
-  background: #6b7280;
-  color: #fff;
-}
-
-body.dark .toolbar button:hover {
-  background: #4b5563;
-}
-
-body.dark .top-right button {
-  background: #6b7280;
-}
-
-body.dark .top-right button:hover {
-  background: #4b5563;
+body.dark .filters button.active,
+body.dark .sorts button.active {
+    background: #2563eb;
+    color: #fff;
 }
